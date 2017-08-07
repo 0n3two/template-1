@@ -659,3 +659,6 @@ template {
   font-size: 0.875em;
   font-weight: 400;
 }
+.parallax {
+  background: url('../img/office.jpg') center / cover no-repeat fixed;
+}
