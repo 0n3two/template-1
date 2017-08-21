@@ -8,19 +8,68 @@
 //                      BUTTONS
 //    ---------------------------------------------- */
 .btn{
-    border: 2px solid #505050;
+    display: inline-block;
+    padding: 10px 15px;
     background: transparent;
-    color: #505050;
-    &:hover{
-        color: #fff;
-        background-color: #01ddaf;
-        border-color: #01ddaf;
-    }
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
     &:focus{
         outline: none;
     }
+    &_type{
+        &_1{
+            border: 2px solid #505050;
+            color: #505050;
+            .fontSizeEm(14);
+            &:hover{
+                color: #fff;
+                background-color: #01ddaf;
+                border-color: #01ddaf;
+            }
+        }
+        &_2{
+            border: 2px solid #01ddaf;
+            color: #01ddaf;
+            .fontSizeEm(13);
+            &:hover{
+                background-color: #01ddaf;
+                color: #fff;
+            }
+        }
+    }
 }
 
+// /* ----------------------------------------------
+//                      LINKS
+//    ---------------------------------------------- */
+//todo add styles for for default links
+.link{
+
+}
+// /* ----------------------------------------------
+//                      IMAGES
+//    ---------------------------------------------- */
+.img{
+    width: 100%;
+}
+
+// /* ----------------------------------------------
+//                      LISTS
+//    ---------------------------------------------- */
+// unordered list
+.list-u{
+    padding-left: 0;
+    margin: 1.5em 0;
+    list-style: none;
+    &__item{
+        margin-top: 0.75em;
+    }
+    &__icon{
+        margin-right: 10px;
+        color: #01ddaf;
+    }
+}
 
 // /* ----------------------------------------------
 //                      MAIN WRAPPER
@@ -260,14 +309,6 @@
 
     }
     &__submit{
-        padding: 5px 15px;
-        cursor: pointer;
-        transition: all 0.2s;
-        &:hover{
-            color: #fff;
-            background-color: #01ddaf;
-            border-color: #01ddaf;
-        }
     }
 }
 
@@ -287,18 +328,30 @@
         &_columns_two{
             display: flex;
         }
+        &_columns-two{
+            &_middle{
+                align-items: center;
+            }
+        }
     }
     &__column-left{
         flex-basis: 50%;
     }
     &__column-right{
         flex-basis: 50%;
+        &_img-placeholder{
+            padding-left: 20px;
+        }
     }
     &__section{
         padding-top: 45px;
     }
     &__rs-two{
-        padding: 0 40px;
+        // fixed missing padding-top
+        // added padding-bottom
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 45px;
     }
 }
 
@@ -313,27 +366,47 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 47%;
-            right: 47%;
-            width: 6%;
+            width: 50px;
             height: 2px;
             background-color: #01ddaf;
         }
+        // added styles for different text-align
+        // modified line under .section__header
+        &_text-align_left{
+            text-align: left;
+            &:after{
+                left: 0;
+            }
+        }
+        &_text-align_center{
+            text-align: center;
+            &:after{
+                left: 50%;
+                margin-left: -25px;
+            }
+        }
     }
     &__heading{
-        text-align: center;
         text-transform: uppercase;
         .fontSizeEm(18);
         font-weight: 400;
         .letter-spacing(1, 18);
     }
     &__description{
-        text-align: center;
         color: #bbbbbb;
         .fontSizeEm(14);
     }
     &__content{
         margin-top: 60px;
+    }
+    // modified style for text inside .section
+    &__text{
+        .fontSizeEm(13);
+        color: #686868;
+        line-height: 1.6;
+        &_align_center{
+            text-align: center;
+        }
     }
 }
 
@@ -358,22 +431,12 @@
         color: #01ddaf;
         .fontSizeEm(80, 16);
     }
-    &__text{
-        .fontSizeEm(13);
-        color: #686868;
-        line-height: 1.6;
-    }
 }
 
 // /* ----------------------------------------------
 //               RANDOM SECTION TWO
 //    ---------------------------------------------- */
 .rs-two{
-    &__text{
-        color: #686868;
-        .fontSizeEm(13);
-        text-align: center;
-    }
     &__items{
         display: flex;
         flex-wrap: wrap;
@@ -554,6 +617,21 @@
         transition: all 0.5s;
     }
 }
+
+// /* ----------------------------------------------
+//               RANDOM SECTION 4
+//    ---------------------------------------------- */
+.rs-four{
+    padding-right: 20px;
+    &__list-u{
+        margin-top: 20px;
+    }
+    &__btn{
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+}
+
 
 
 
