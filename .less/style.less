@@ -118,8 +118,16 @@
 //    ---------------------------------------------- */
 .header{
     border-bottom: 1px solid #E4E4E4;
+    background-color: #fff;
     &_relative{
         position: relative; // for .search
+    }
+    &_fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: @z-index-default;
     }
     &__inner{
         display: flex;
@@ -330,11 +338,14 @@
         border: none;
         background-color: #333333;
         text-align: center;
-        text-transform: uppercase;
         .fontSizeEm(20);
         font-weight: 300;
+        color: #7b7b7b;
         &:focus{
             outline: none;
+            &::placeholder{
+                color: transparent;
+            }
         }
         &::placeholder{
             color: #eee;
