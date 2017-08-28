@@ -2,6 +2,14 @@ jQuery(document).ready(function(){
 
     searchDropdown();
     stickyHeader();
+    jQuery('.owl-carousel').owlCarousel({
+
+        items: 1,
+        loop: true,
+        autoWidth: true,
+        nav: true
+
+    });
 
 });
 /*
