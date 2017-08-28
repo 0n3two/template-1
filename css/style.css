@@ -581,8 +581,12 @@ template {
   color: #eee;
 }
 .slider {
-  height: 600px;
-  text-align: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.slider__img {
+  width: 100%;
 }
 .content {
   padding-bottom: 75px;
