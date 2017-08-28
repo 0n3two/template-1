@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 
     searchDropdown();
+    stickyHeader();
 
 });
 /*
@@ -52,6 +53,45 @@ function searchDropdown(){
             }
 
         }
+    });
+
+
+}
+/*
+*   Sticky header
+*
+*   Sticky header after page scrolling
+*
+* */
+function stickyHeader(){
+
+    //  .header element
+    var header = jQuery('.header');
+
+    jQuery(window).bind({
+
+        scroll: function(){
+
+            if(jQuery(window).scrollTop() > 0){
+
+                if(!jQuery('div').is('.sticky-spacer')){
+
+                    header.before('<div class="sticky-spacer"></div>');
+                    jQuery('.sticky-spacer').css('height', header.innerHeight());
+
+                }
+
+                header.addClass('header_fixed');
+
+            } else{
+
+                header.removeClass('header_fixed');
+                jQuery('.sticky-spacer').remove();
+
+            }
+
+        }
+
     });
 
 
