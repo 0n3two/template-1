@@ -341,62 +341,62 @@
 
                     <div class='section__content rs-three__content'>
 
-                        <ul class='menu'>
-                            <li class='menu__item menu__item_active'>Все</li>
-                            <li class='menu__item'>Неплохо</li>
-                            <li class='menu__item'>Ниочинь</li>
-                            <li class='menu__item'>Остой</li>
+                        <ul class='menu rs-three__menu'>
+                            <li class='menu__item menu__item_active' data-groups='all'>Все</li>
+                            <li class='menu__item' data-groups='one'>Неплохо</li>
+                            <li class='menu__item' data-groups='two'>Ниочинь</li>
+                            <li class='menu__item' data-groups='three'>Остой</li>
                         </ul>
 
                         <ul class='rs-three__items'>
-                            <li class='rs-three__item'>
+                            <li class='rs-three__item'  data-groups='["all", "one"]'>
                                 <img class='rs-three__img' src='pict/rs-three__2.jpg'>
                                 <a class='rs-three__link' href='#'>
-                                    <figure class='rs-three__desc'>
-                                        <figcaption>
+                                    <div class='rs-three__desc'>
+                                        <div>
                                             <h4 class='rs-three__title'>структура</h4>
-                                        </figcaption>
-                                    </figure>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li class='rs-three__item'>
+                            <li class='rs-three__item'  data-groups='["all", "two"]'>
                                 <img class='rs-three__img' src='pict/rs-three__3.jpg'>
                                 <a class='rs-three__link' href='#'>
-                                    <figure class='rs-three__desc'>
-                                        <figcaption>
+                                    <div class='rs-three__desc'>
+                                        <div>
                                             <h4 class='rs-three__title'>участие</h4>
-                                        </figcaption>
-                                    </figure>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li class='rs-three__item'>
+                            <li class='rs-three__item'  data-groups='["all", "three"]'>
                                 <img class='rs-three__img' src='pict/rs-three__1.jpg'>
                                 <a class='rs-three__link' href='#'>
-                                    <figure class='rs-three__desc'>
-                                        <figcaption>
+                                    <div class='rs-three__desc'>
+                                        <div>
                                             <h4 class='rs-three__title'>деятельность</h4>
-                                        </figcaption>
-                                    </figure>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li class='rs-three__item'>
+                            <li class='rs-three__item' data-groups='["all", "one"]'>
                                 <img class='rs-three__img' src='pict/rs-three__4.jpg'>
                                 <a class='rs-three__link' href='#'>
-                                    <figure class='rs-three__desc'>
-                                        <figcaption>
+                                    <div class='rs-three__desc'>
+                                        <div>
                                             <h4 class='rs-three__title'>условия</h4>
-                                        </figcaption>
-                                    </figure>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
-                            <li class='rs-three__item'>
+                            <li class='rs-three__item'  data-groups='["all", "two"]'>
                                 <img class='rs-three__img' src='pict/rs-three__5.jpg'>
                                 <a class='rs-three__link' href='#'>
-                                    <figure class='rs-three__desc'>
-                                        <figcaption>
+                                    <div class='rs-three__desc'>
+                                        <div>
                                             <h4 class='rs-three__title'>значимость</h4>
-                                        </figcaption>
-                                    </figure>
+                                        </div>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -965,7 +965,7 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
     <script src='js/imagesloaded.pkgd.min.js'></script>
     <script src='js/owl.carousel.min.js'></script>
-    <script src='js/shuffle.min.js'></script>
+    <script src='js/shuffle.js'></script>
     <script src='js/main.js'></script>
 
 </html>
