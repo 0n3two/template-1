@@ -107,8 +107,9 @@ function sliderMain(){
         loop: true,
         nav: true,
         navText: ["<span class='controls__icon fa fa-angle-left'>",
-            "<span class='controls__icon fa fa-angle-right'>"]
-
+            "<span class='controls__icon fa fa-angle-right'>"],
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut'
     });
 
     slider.on('translate.owl.carousel', function(e){
