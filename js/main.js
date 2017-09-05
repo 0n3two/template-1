@@ -100,10 +100,16 @@ function stickyHeader(){
 
 }
 
+/*
+*   Slider: main
+*
+* */
 function sliderMain(){
 
+    //  slider items
     var slider = jQuery('.slider__items');
 
+    //  slider init
     slider.owlCarousel({
 
         items: 1,
@@ -115,6 +121,10 @@ function sliderMain(){
         animateOut: 'fadeOut'
     });
 
+    /*
+    *   Disable controls prev/next while sliding
+    *
+    * */
     slider.on('translate.owl.carousel', function(e){
 
         jQuery('.slider .owl-prev, .slider .owl-next').addClass('controls__btn-disabled');
@@ -130,20 +140,40 @@ function sliderMain(){
 
 }
 
+/*
+*   Sorting by menu for .rs-three
+*
+* */
 function rsThreeShuffle(){
 
     var Shuffle = window.Shuffle;
-    var element = document.querySelector('.rs-three__items');
+    var container = document.querySelector('.rs-three__items');
 
-    var shuffleInstance = new Shuffle(element, {
-        itemSelector: '.rs-three__item'
+    var shuffleInstance = new Shuffle(container, {
+        itemSelector: '.rs-three__item' //  class of used items
     });
 
-    jQuery('.rs-three__menu .menu__item').click(function(){
+    var items = jQuery('.rs-three__menu .menu__item');
 
+    items.click(function(){
+
+        //  get the attr value
         var clickedItemDataAttr = jQuery(this).attr('data-groups');
 
+        //  filter items
         shuffleInstance.filter(clickedItemDataAttr);
+
+        //  remove active class from all items
+        items.each(function(){
+
+            jQuery(this).removeClass('menu__item_active');
+
+        });
+
+        //  add active class for clicked item
+        jQuery(this).addClass('menu__item_active');
+
+
 
     });
 
