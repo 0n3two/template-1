@@ -1,8 +1,11 @@
+'use strict';
+
 jQuery(document).ready(function(){
 
     searchDropdown();
     stickyHeader();
     sliderMain();
+    rsThreeShuffle();
 
 });
 /*
@@ -122,6 +125,25 @@ function sliderMain(){
     slider.on('translated.owl.carousel', function(e){
 
         jQuery('.slider .owl-prev, .slider .owl-next').removeClass('controls__btn-disabled');
+
+    });
+
+}
+
+function rsThreeShuffle(){
+
+    var Shuffle = window.Shuffle;
+    var element = document.querySelector('.rs-three__items');
+
+    var shuffleInstance = new Shuffle(element, {
+        itemSelector: '.rs-three__item'
+    });
+
+    jQuery('.rs-three__menu .menu__item').click(function(){
+
+        var clickedItemDataAttr = jQuery(this).attr('data-groups');
+
+        shuffleInstance.filter(clickedItemDataAttr);
 
     });
 
