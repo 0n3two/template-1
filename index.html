@@ -6,7 +6,6 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic'>
         <link rel='stylesheet' href='modules/font-awesome-4.7.0/css/font-awesome.min.css'>
         <link rel='stylesheet' href='css/owl.carousel.min.css'>
-        <link rel='stylesheet' href='css/owl.theme.default.min.css'>
         <link rel='stylesheet' href='css/style.css'>
         <!-- icons -->
         <link rel='apple-touch-icon' sizes='180x180' href='img/favicons/apple-touch-icon.png'>
@@ -167,14 +166,25 @@
 
         </header><!-- /header -->
 
-        <div class='wrapper-fluid'>
+        <div class='slider wrapper-big'>
 
             <!-- slider -->
-            <ul class='slider owl-carousel owl-theme'>
-                <li class='slider__item'><img class='slider__img' src='pict/slider/slider__img1.jpg' alt='somealt'><h4>some</h4></li>
-                <li class='slider__item'><img class='slider__img' src='pict/slider/slider__img2.jpg' alt='somealt'><h4>text</h4></li>
-                <li class='slider__item'><img class='slider__img' src='pict/slider/slider__img3.jpg' alt='somealt'><h4>here</h4></li>
+            <ul class='slider__items owl-carousel'>
+                <li class='slider__item'>
+                    <img class='slider__img' src='pict/slider/slider__img1.jpg' alt='somealt'>
+                    <div class='slider__content'>
+
+                    </div>
+                </li>
+                <li class='slider__item'><img class='slider__img' src='pict/slider/slider__img2.jpg' alt='somealt'></li>
+                <li class='slider__item'><img class='slider__img' src='pict/slider/slider__img3.jpg' alt='somealt'></li>
             </ul><!-- /slider -->
+
+            <div class='slider__controls controls'>
+                <div class='controls__btn-prev slider__btn-prev'><span class='controls__icon fa fa-angle-left'></span></div>
+                <div class='controls__btn-next slider__btn-next'><span class='controls__icon fa fa-angle-right'></span></div>
+            </div>
+
 
         </div>
 
@@ -470,9 +480,9 @@
                             </li>
                         </ul>
 
-                        <div class='rs-five__controls'>
-                            <div class='rs-five__to-left'><span class='rs-five__icon fa fa-angle-left'></span></div>
-                            <div class='rs-five__to-right'><span class='rs-five__icon fa fa-angle-right'></span></div>
+                        <div class='rs-five__controls controls'>
+                            <div class='controls__btn-prev'><span class='controls__icon fa fa-angle-left'></span></div>
+                            <div class='controls__btn-next'><span class='controls__icon fa fa-angle-right'></span></div>
                         </div>
 
                     </div>
@@ -482,7 +492,7 @@
             </div><!-- /row -->
 
             <!-- row -->
-            <div class='content__row wrapper-fluid'>
+            <div class='content__row wrapper-big'>
 
                 <div class='rs-six'>
 
@@ -615,7 +625,7 @@
             </div><!-- /row -->
 
             <!-- row -->
-            <div class='content__row wrapper-fluid'>
+            <div class='content__row wrapper-big'>
 
                 <div class='rs-nine'>
 
