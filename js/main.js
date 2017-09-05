@@ -104,35 +104,24 @@ function sliderMain(){
     slider.owlCarousel({
 
         items: 1,
-        loop: true
+        loop: true,
+        nav: true,
+        navText: ["<span class='controls__icon fa fa-angle-left'>",
+            "<span class='controls__icon fa fa-angle-right'>"]
 
     });
 
     slider.on('translate.owl.carousel', function(e){
 
-        jQuery('.slider__btn-prev, .slider__btn-next').addClass('controls__btn-disabled');
+        jQuery('.slider .owl-prev, .slider .owl-next').addClass('controls__btn-disabled');
 
     });
 
 
     slider.on('translated.owl.carousel', function(e){
 
-        jQuery('.slider__btn-prev, .slider__btn-next').removeClass('controls__btn-disabled');
+        jQuery('.slider .owl-prev, .slider .owl-next').removeClass('controls__btn-disabled');
 
     });
-
-
-    jQuery('.slider__btn-prev').click(function(){
-
-        slider.trigger('prev.owl.carousel');
-
-    });
-
-    jQuery('.slider__btn-next').click(function(){
-
-        slider.trigger('next.owl.carousel');
-
-    });
-
 
 }
