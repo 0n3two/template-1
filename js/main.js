@@ -2,14 +2,7 @@ jQuery(document).ready(function(){
 
     searchDropdown();
     stickyHeader();
-    jQuery('.owl-carousel').owlCarousel({
-
-        items: 1,
-        loop: true,
-        autoWidth: true,
-        nav: true
-
-    });
+    sliderMain();
 
 });
 /*
@@ -99,6 +92,45 @@ function stickyHeader(){
             }
 
         }
+
+    });
+
+}
+
+function sliderMain(){
+
+    var slider = jQuery('.slider__items');
+
+    slider.owlCarousel({
+
+        items: 1,
+        loop: true
+
+    });
+
+    slider.on('translate.owl.carousel', function(e){
+
+        jQuery('.slider__btn-prev, .slider__btn-next').addClass('controls__btn-disabled');
+
+    });
+
+
+    slider.on('translated.owl.carousel', function(e){
+
+        jQuery('.slider__btn-prev, .slider__btn-next').removeClass('controls__btn-disabled');
+
+    });
+
+
+    jQuery('.slider__btn-prev').click(function(){
+
+        slider.trigger('prev.owl.carousel');
+
+    });
+
+    jQuery('.slider__btn-next').click(function(){
+
+        slider.trigger('next.owl.carousel');
 
     });
 
