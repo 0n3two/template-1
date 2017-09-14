@@ -6,6 +6,7 @@ jQuery(document).ready(function(){
     stickyHeader();
     sliderMain();
     rsThreeShuffle();
+    sliderRsFive();
 
 });
 /*
@@ -174,6 +175,30 @@ function rsThreeShuffle(){
         jQuery(this).addClass('menu__item_active');
 
 
+
+    });
+
+}
+
+/*
+*   Slider for .rs-five
+*
+* */
+function sliderRsFive(){
+
+    //  slider items wrapper
+    var slider = jQuery('.rs-five__items');
+
+    //  slider init
+    slider.owlCarousel({
+
+        items: 4,
+        loop: true,
+        nav: true,
+        dots: false,
+        margin: 12,
+        navText: ["<span class='controls__icon fa fa-angle-left'>",
+            "<span class='controls__icon fa fa-angle-right'>"]
 
     });
 
