@@ -1029,7 +1029,8 @@
         text-align: center;
     }
     &__img{
-        width: 150px;
+        display: inline-block !important; // disable default slider styles
+        width: 150px !important; // disable default slider styles
         height: 150px;
         border-radius: 50%;
     }
@@ -1050,20 +1051,29 @@
             content: '\0022';
         }
     }
-    &__controls{
-        text-align: center;
-        user-select: none;
-    }
-    &__control{
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border: 2px solid #01ddaf;
-        cursor: pointer;
-        &_active{
-            background-color: #01ddaf;
+    //  generated slider controls
+    & .owl{
+        &-dots{
+            text-align: center;
+            user-select: none;
+        }
+        &-dot{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #01ddaf;
+            border-radius: 50%;
+            margin-left: 5px;
+            &:first-child{
+                margin-left: 0;
+            }
+            &.active{
+                background-color: #01ddaf;
+
+            }
         }
     }
+
 }
 
 // /* ----------------------------------------------
