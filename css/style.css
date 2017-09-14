@@ -1150,7 +1150,11 @@ template {
   list-style: none;
 }
 .rs-five__item {
-  width: 277px;
+  width: 276px;
+  margin-left: 12px;
+}
+.rs-five__item:first-child {
+  margin-left: 0;
 }
 .rs-five__img {
   width: 100%;
@@ -1164,9 +1168,56 @@ template {
 .rs-five__description {
   font-size: 0.8125em;
 }
-.rs-five__controls {
+.rs-five .owl {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.rs-five .owl-nav {
   margin-top: 30px;
   text-align: center;
+}
+.rs-five .owl-prev {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  background-color: #01ddaf;
+  cursor: pointer;
+  text-align: center;
+}
+.rs-five .owl-prev:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  border-left: 10px solid #01ddaf;
+  border-bottom: 20px solid transparent;
+  border-top: 20px solid #01ddaf;
+  border-right: 10px solid transparent;
+}
+.rs-five .owl-next {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  margin-left: 22px;
+  background-color: #01ddaf;
+  cursor: pointer;
+  text-align: center;
+}
+.rs-five .owl-next:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -20px;
+  border-left: 10px solid transparent;
+  border-bottom: 20px solid #01ddaf;
+  border-top: 20px solid transparent;
+  border-right: 10px solid #01ddaf;
 }
 .rs-six {
   display: -webkit-box;
