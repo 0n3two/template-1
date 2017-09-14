@@ -7,6 +7,7 @@ jQuery(document).ready(function(){
     sliderMain();
     rsThreeShuffle();
     sliderRsFive();
+    counterUpRsSix();
 
 });
 /*
@@ -199,6 +200,17 @@ function sliderRsFive(){
         margin: 12,
         navText: ["<span class='controls__icon fa fa-angle-left'>",
             "<span class='controls__icon fa fa-angle-right'>"]
+
+    });
+
+}
+
+function counterUpRsSix(){
+
+    jQuery('.rs-six__amount').counterUp({
+
+        delay: 10,
+        time: 1500
 
     });
 
