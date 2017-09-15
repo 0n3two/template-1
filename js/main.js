@@ -8,6 +8,7 @@ jQuery(document).ready(function(){
     rsThreeShuffle();
     sliderRsFive();
     counterUpRsSix();
+    sliderClientsAboutUs();
     sliderClients();
 
 });
@@ -221,7 +222,7 @@ function counterUpRsSix(){
 *   Slider for 'clients about us'
 *
 * */
-function sliderClients(){
+function sliderClientsAboutUs(){
 
     //  slider items wrapper
     var slider = jQuery('.rs-eight__items');
@@ -234,5 +235,27 @@ function sliderClients(){
         animateOut: 'fadeOut'
 
     })
+
+}
+
+/*
+*   Slider for clients logo
+*
+* */
+function sliderClients(){
+
+    //  slider items wrapper
+    var slider = jQuery('.rs-nine');
+
+    slider.owlCarousel({
+
+        items: 5,
+        nav: false,
+        dots: false,
+        loop: true,
+        margin: 0
+
+    });
+
 
 }
