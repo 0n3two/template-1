@@ -1081,15 +1081,18 @@
 //    ---------------------------------------------- */
 .rs-nine{
     display: flex;
+    background-color: #1D1D1D;
     &__item{
         flex-grow: 1;
-        background-color: #1D1D1D;
-        &:nth-child(2n + 2){
-            background-color: #2D2D2D;
-        }
     }
     &__img{
         width: 100%;
+    }
+    //  slider generated
+    & .owl-item{
+        &:nth-child(2n + 2){
+            background-color: #2D2D2D;
+        }
     }
 }
 

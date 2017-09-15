@@ -1382,6 +1382,7 @@ template {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #1D1D1D;
 }
 .rs-nine__item {
   -webkit-box-flex: 1;
@@ -1389,13 +1390,12 @@ template {
      -moz-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  background-color: #1D1D1D;
-}
-.rs-nine__item:nth-child(2n + 2) {
-  background-color: #2D2D2D;
 }
 .rs-nine__img {
   width: 100%;
+}
+.rs-nine .owl-item:nth-child(2n + 2) {
+  background-color: #2D2D2D;
 }
 .rs-ten__content {
   display: -webkit-box;
