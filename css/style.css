@@ -1788,15 +1788,40 @@ template {
   .nav-main__nav {
     display: block;
   }
-  .nav-main .nav__item {
-    border-bottom: 1px solid #3a3a3a;
+  .nav-main .nav__item_level-2 {
+    padding-right: 20px;
+    border-bottom: none;
+  }
+  .nav-main .nav__item_level-3 {
+    border-bottom: none;
   }
   .nav-main .nav__link {
     padding: 20px;
+    border-bottom: 1px solid #3a3a3a;
     color: #8A8A8A;
     line-height: 1.5;
   }
   .nav-main .nav__subnav {
+    display: none;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    background-color: #333333;
+  }
+  .nav-main .nav__subnav_level-2 {
+    padding-left: 40px;
+  }
+  .nav-main .nav__subnav_level-3 {
+    padding-left: 20px;
+  }
+  .nav-main .nav__col {
+    padding: 0;
+  }
+  .nav-main .nav__heading {
+    padding: 40px 20px 20px;
+    border-bottom: none;
+  }
+  .nav-main .nav__icon {
     display: none;
   }
   .nav-open__button {

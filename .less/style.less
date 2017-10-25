@@ -1521,15 +1521,42 @@
         }
         & .nav{
             &__item{
-                border-bottom: 1px solid #3a3a3a;
+                &_level-2{
+                    padding-right: 20px;
+                    border-bottom: none;
+                }
+                &_level-3{
+                    border-bottom: none;
+                }
             }
             &__link{
                 padding: 20px;
+                border-bottom: 1px solid #3a3a3a;
                 color: #8A8A8A;
                 line-height: 1.5;
             }
             &__subnav{
-                display: none;//    will be deleted, test
+                display: none;
+                position: static;
+                visibility: visible;
+                opacity: 1;
+                background-color: #333333;
+                &_level-2{
+                    padding-left: 40px;
+                }
+                &_level-3{
+                    padding-left: 20px;
+                }
+            }
+            &__col{
+                padding: 0;
+            }
+            &__heading{
+                padding: 40px 20px 20px;
+                border-bottom: none;
+            }
+            &__icon{
+                display: none;
             }
         }
     }
