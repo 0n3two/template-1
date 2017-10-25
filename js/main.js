@@ -12,6 +12,7 @@ jQuery(document).ready(function(){
     sliderClients();
     navOpen();
     navClose();
+    navSubmenu();
 
 });
 /*
@@ -311,5 +312,53 @@ function navClose(){
         nav.removeClass(navOpened);
 
     });
+
+}
+
+/*
+* Open & close submenu
+*
+* */
+function navSubmenu(){
+
+    if(window.innerWidth < 901){
+
+            //  element with subnav
+        var itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
+            //  subnav selector
+            subnavItemSelector = '.nav__subnav',
+            //  opened item css class
+            itemOpenedClass = 'nav__item_opened',
+            //  element link selector
+            linkSelector = '.nav__link',
+            //  value for open/close
+            closed = true;
+
+        //  disable links inside element
+        itemToggle.children(linkSelector).click(function(e){
+
+            e.preventDefault();
+
+        });
+
+        jQuery(itemToggle).click(function(){
+
+            // first subnav element
+            var subnavCurrent = jQuery(this).children(subnavItemSelector);
+
+            if(closed){
+                subnavCurrent.css('display', 'block');
+                jQuery(this).addClass(itemOpenedClass);
+                closed = false;
+            }
+            else{
+                subnavCurrent.css('display', 'none');
+                jQuery(this).removeClass(itemOpenedClass);
+                closed = true;
+            }
+
+        });
+
+    }
 
 }
