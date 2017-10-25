@@ -10,6 +10,8 @@ jQuery(document).ready(function(){
     counterUpRsSix();
     sliderClientsAboutUs();
     sliderClients();
+    navOpen();
+    navClose();
 
 });
 /*
@@ -76,31 +78,35 @@ function stickyHeader(){
     //  .header element
     var header = jQuery('.header');
 
-    jQuery(window).bind({
+    if(window.innerWidth > 900){
 
-        scroll: function(){
+        jQuery(window).bind({
 
-            if(jQuery(window).scrollTop() > 0){
+            scroll: function(){
 
-                if(!jQuery('div').is('.sticky-spacer')){
+                if(jQuery(window).scrollTop() > 0){
 
-                    header.before('<div class="sticky-spacer"></div>');
-                    jQuery('.sticky-spacer').css('height', header.innerHeight());
+                    if(!jQuery('div').is('.sticky-spacer')){
+
+                        header.before('<div class="sticky-spacer"></div>');
+                        jQuery('.sticky-spacer').css('height', header.innerHeight());
+
+                    }
+
+                    header.addClass('header_fixed');
+
+                } else{
+
+                    header.removeClass('header_fixed');
+                    jQuery('.sticky-spacer').remove();
 
                 }
 
-                header.addClass('header_fixed');
-
-            } else{
-
-                header.removeClass('header_fixed');
-                jQuery('.sticky-spacer').remove();
-
             }
 
-        }
+        });
 
-    });
+    }
 
 }
 
@@ -257,5 +263,53 @@ function sliderClients(){
 
     });
 
+
+}
+
+/*
+*   Open navigation
+*
+* */
+function navOpen(){
+
+    //  button for open
+    var button  = jQuery('.nav-open__button'),
+        //  main navigation
+        nav     = jQuery('.nav-main'),
+        //  class for opened main navigation
+        navOpened = 'nav-main_opened';
+
+    button.click(function(){
+
+            nav.animate({
+                width: 'show'
+            }, 300);
+            nav.addClass(navOpened);
+
+    });
+
+}
+
+/*
+*   Close navigation
+*
+* */
+function navClose(){
+
+    //  button for close
+    var button = jQuery('.nav-main .action-close__button'),
+        //  main navigation
+        nav = jQuery('.nav-main'),
+        //  class for opened main navigation
+        navOpened = 'nav-main_opened';
+
+    button.click(function(){
+
+        nav.animate({
+            width: 'hide'
+        }, 300);
+        nav.removeClass(navOpened);
+
+    });
 
 }
