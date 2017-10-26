@@ -330,9 +330,7 @@ function navSubmenu(){
             //  opened item css class
             itemOpenedClass = 'nav__item_opened',
             //  element link selector
-            linkSelector = '.nav__link',
-            //  value for open/close
-            closed = true;
+            linkSelector = '.nav__link';
 
         //  disable links inside element
         itemToggle.children(linkSelector).click(function(e){
@@ -346,15 +344,17 @@ function navSubmenu(){
             // first subnav element
             var subnavCurrent = jQuery(this).children(subnavItemSelector);
 
-            if(closed){
-                subnavCurrent.css('display', 'block');
-                jQuery(this).addClass(itemOpenedClass);
-                closed = false;
-            }
-            else{
+            if(jQuery(this).hasClass(itemOpenedClass)){
+
                 subnavCurrent.css('display', 'none');
                 jQuery(this).removeClass(itemOpenedClass);
-                closed = true;
+
+            }
+            else{
+
+                subnavCurrent.css('display', 'block');
+                jQuery(this).addClass(itemOpenedClass);
+
             }
 
         });
