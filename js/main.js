@@ -292,6 +292,9 @@ function navMobileToggle(){
         }, 300);
         nav.addClass(navOpenedClass);
 
+        //  disable scroll for main area
+        jQuery('body').css('overflow', 'hidden');
+
 
     });
 
@@ -302,6 +305,9 @@ function navMobileToggle(){
             width: 'hide'
         }, 300);
         nav.removeClass(navOpenedClass);
+
+        // enable scroll for main area
+        jQuery('body').css('overflow', 'visible');
 
     });
 
