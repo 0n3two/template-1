@@ -10,8 +10,7 @@ jQuery(document).ready(function(){
     counterUpRsSix();
     sliderClientsAboutUs();
     sliderClients();
-    navOpen();
-    navClose();
+    navMobileToggle();
     navSubmenu();
 
 });
@@ -268,48 +267,41 @@ function sliderClients(){
 }
 
 /*
-*   Open navigation
+*   open/close mobile navigation
 *
 * */
-function navOpen(){
+function navMobileToggle(){
 
-    //  button for open
-    var button  = jQuery('.nav-open__button'),
-        //  main navigation
+        //  button for open
+    var buttonOpen = jQuery('.nav-open__button'),
+
+        //  button for close
+        buttonClose = jQuery('.nav-main .action-close__button'),
+
+        //  main navigation element
         nav     = jQuery('.nav-main'),
-        //  class for opened main navigation
-        navOpened = 'nav-main_opened';
 
-    button.click(function(){
+        //  opened navigation css class
+        navOpenedClass = 'nav-main_opened';
 
-            nav.animate({
-                width: 'show'
-            }, 300);
-            nav.addClass(navOpened);
+    //  open navigation
+    buttonOpen.click(function(){
+
+        nav.animate({
+            width: 'show'
+        }, 300);
+        nav.addClass(navOpenedClass);
+
 
     });
 
-}
-
-/*
-*   Close navigation
-*
-* */
-function navClose(){
-
-    //  button for close
-    var button = jQuery('.nav-main .action-close__button'),
-        //  main navigation
-        nav = jQuery('.nav-main'),
-        //  class for opened main navigation
-        navOpened = 'nav-main_opened';
-
-    button.click(function(){
+    //  close navigation
+    buttonClose.click(function(){
 
         nav.animate({
             width: 'hide'
         }, 300);
-        nav.removeClass(navOpened);
+        nav.removeClass(navOpenedClass);
 
     });
 
