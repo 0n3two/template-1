@@ -284,8 +284,8 @@ function navMobileToggle(){
         //  opened navigation css class
         navOpenedClass = 'nav-main_opened';
 
-    //  open navigation
-    buttonOpen.click(function(){
+    // open navigation
+    var navOpen = function(){
 
         nav.animate({
             width: 'show'
@@ -295,11 +295,13 @@ function navMobileToggle(){
         //  disable scroll for main area
         jQuery('body').css('overflow', 'hidden');
 
+        //  add overlay for main area
+        jQuery('body').prepend('<div class="overlay-main"></div>');
 
-    });
 
-    //  close navigation
-    buttonClose.click(function(){
+    };
+
+    var navClose = function(){
 
         nav.animate({
             width: 'hide'
@@ -308,6 +310,30 @@ function navMobileToggle(){
 
         // enable scroll for main area
         jQuery('body').css('overflow', 'visible');
+
+        //  remove overlay
+        jQuery('.overlay-main').remove();
+
+    };
+
+    //  open navigation
+    buttonOpen.click(function(){
+
+        navOpen();
+
+    });
+
+    //  close navigation by button
+    buttonClose.click(function(){
+
+        navClose();
+
+    });
+
+    //  close navigation by click on overlay
+    jQuery(document).on('click', '.overlay-main', function(){
+
+        navClose();
 
     });
 
