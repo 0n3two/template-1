@@ -11,7 +11,7 @@ jQuery(document).ready(function(){
     sliderClientsAboutUs();
     sliderClients();
     navMobileToggle();
-    navSubmenu();
+    navMobileSumbenuToggle();
 
 });
 /*
@@ -343,46 +343,42 @@ function navMobileToggle(){
 * Open & close submenu
 *
 * */
-function navSubmenu(){
+function navMobileSumbenuToggle(){
 
-    if(window.innerWidth < 901){
+        //  element with subnav
+    var itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
+        //  subnav selector
+        subnavItemSelector = '.nav__subnav',
+        //  opened item css class
+        itemOpenedClass = 'nav__item_opened',
+        //  element link selector
+        linkSelector = '.nav__link';
 
-            //  element with subnav
-        var itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
-            //  subnav selector
-            subnavItemSelector = '.nav__subnav',
-            //  opened item css class
-            itemOpenedClass = 'nav__item_opened',
-            //  element link selector
-            linkSelector = '.nav__link';
+    //  disable links inside element
+    itemToggle.children(linkSelector).click(function(e){
 
-        //  disable links inside element
-        itemToggle.children(linkSelector).click(function(e){
+        e.preventDefault();
 
-            e.preventDefault();
+    });
 
-        });
+    jQuery(itemToggle).click(function(){
 
-        jQuery(itemToggle).click(function(){
+        // first subnav element
+        var subnavCurrent = jQuery(this).children(subnavItemSelector);
 
-            // first subnav element
-            var subnavCurrent = jQuery(this).children(subnavItemSelector);
+        if(jQuery(this).hasClass(itemOpenedClass)){
 
-            if(jQuery(this).hasClass(itemOpenedClass)){
+            subnavCurrent.css('display', 'none');
+            jQuery(this).removeClass(itemOpenedClass);
 
-                subnavCurrent.css('display', 'none');
-                jQuery(this).removeClass(itemOpenedClass);
+        }
+        else{
 
-            }
-            else{
+            subnavCurrent.css('display', 'block');
+            jQuery(this).addClass(itemOpenedClass);
 
-                subnavCurrent.css('display', 'block');
-                jQuery(this).addClass(itemOpenedClass);
+        }
 
-            }
-
-        });
-
-    }
+    });
 
 }
