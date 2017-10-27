@@ -114,6 +114,22 @@
 }
 
 // /* ----------------------------------------------
+//                      OVERLAYS
+//    ---------------------------------------------- */
+.overlay{
+    &-main{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: @z-index-overlay;
+    }
+}
+
+
+// /* ----------------------------------------------
 //                      CONTROLS
 //    ---------------------------------------------- */
 .controls{
@@ -264,7 +280,7 @@
         visibility: hidden;
         position: absolute;
         background-color: #222222;
-        z-index: @z-nav-submenu;
+        z-index: @z-index-nav-submenu;
         transition: opacity 0.3s;
         &_level-2{
             top: 100%;
@@ -300,7 +316,7 @@
                 width: 1px;
                 transform: translate(0,-50%);
                 background-image: linear-gradient(to top, rgba(0,0,0,0), #353535, rgba(0,0,0,0));
-                z-index: @z-nav-submenu;
+                z-index: @z-index-nav-submenu;
             }
         }
     }
@@ -1510,7 +1526,7 @@
         height: 100%;
         width: 35%;
         background-color: #333333;
-        z-index: @z-index-menu;
+        z-index: @z-index-mobile-menu;
         overflow-y: auto;
         overflow-x: visible;
         &_opened{

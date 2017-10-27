@@ -284,6 +284,15 @@ template {
   width: 1500px;
   margin: 0 auto;
 }
+.overlay-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1300;
+}
 .controls {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -435,7 +444,7 @@ template {
   visibility: hidden;
   position: absolute;
   background-color: #222222;
-  z-index: 1300;
+  z-index: 1200;
   -webkit-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   -moz-transition: opacity 0.3s;
@@ -492,7 +501,7 @@ template {
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), #353535, rgba(0, 0, 0, 0));
   background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), #353535, rgba(0, 0, 0, 0));
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), #353535, rgba(0, 0, 0, 0));
-  z-index: 1300;
+  z-index: 1200;
 }
 .nav__heading {
   padding: 15px;
@@ -1778,7 +1787,7 @@ template {
     height: 100%;
     width: 35%;
     background-color: #333333;
-    z-index: 1200;
+    z-index: 1400;
     overflow-y: auto;
     overflow-x: visible;
   }
