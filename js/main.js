@@ -10,8 +10,7 @@ jQuery(document).ready(function(){
     counterUpRsSix();
     sliderClientsAboutUs();
     sliderClients();
-    navMobileToggle();
-    navMobileSumbenuToggle();
+    navMobile();
 
 });
 /*
@@ -201,7 +200,18 @@ function sliderRsFive(){
     //  slider init
     slider.owlCarousel({
 
-        items: 4,
+        //  sets by from number up
+        responsive: {
+
+            0: {
+                items: 3
+            },
+
+            769: {
+                items: 4
+            }
+
+        },
         loop: true,
         nav: true,
         dots: false,
@@ -255,7 +265,14 @@ function sliderClients(){
 
     slider.owlCarousel({
 
-        items: 5,
+        responsive: {
+            0: {
+                items: 3
+            },
+            769: {
+                items: 5
+            }
+        },
         nav: false,
         dots: false,
         loop: true,
@@ -270,7 +287,7 @@ function sliderClients(){
 *   open/close mobile navigation
 *
 * */
-function navMobileToggle(){
+function navMobile(){
 
         //  button for open
     var buttonOpen = jQuery('.nav-open__button'),
@@ -279,10 +296,29 @@ function navMobileToggle(){
         buttonClose = jQuery('.nav-main .action-close__button'),
 
         //  main navigation element
-        nav     = jQuery('.nav-main'),
+        nav = jQuery('.nav-main'),
 
         //  opened navigation css class
-        navOpenedClass = 'nav-main_opened';
+        navOpenedClass = 'nav-main_opened',
+
+        // element with subnav
+        itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
+
+        //  subnav selector
+        subnavItemSelector = '.nav__subnav',
+
+        //  opened item css class
+        itemOpenedClass = 'nav__item_has-subnav_opened',
+
+        //  element link selector
+        linkSelector = '.nav__link';
+
+    //  disable links inside elements with subnav
+    itemToggle.children(linkSelector).click(function(e){
+
+        e.preventDefault();
+
+    });
 
     // open navigation
     var navOpen = function(){
@@ -301,6 +337,7 @@ function navMobileToggle(){
 
     };
 
+    //  close navigation
     var navClose = function(){
 
         nav.animate({
@@ -337,48 +374,46 @@ function navMobileToggle(){
 
     });
 
-}
+    //  toggle submenu
+    itemToggle.click(function(){
 
-/*
-* Open & close submenu
-*
-* */
-function navMobileSumbenuToggle(){
+        //  check for menu opened
+        if(nav.hasClass(navOpenedClass)){
 
-        //  element with subnav
-    var itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
-        //  subnav selector
-        subnavItemSelector = '.nav__subnav',
-        //  opened item css class
-        itemOpenedClass = 'nav__item_opened',
-        //  element link selector
-        linkSelector = '.nav__link';
+            if(jQuery(this).hasClass(itemOpenedClass)){
 
-    //  disable links inside element
-    itemToggle.children(linkSelector).click(function(e){
+                jQuery(this).removeClass(itemOpenedClass);
 
-        e.preventDefault();
+            }
+            else{
 
-    });
+                jQuery(this).addClass(itemOpenedClass);
 
-    jQuery(itemToggle).click(function(){
-
-        // first subnav element
-        var subnavCurrent = jQuery(this).children(subnavItemSelector);
-
-        if(jQuery(this).hasClass(itemOpenedClass)){
-
-            subnavCurrent.css('display', 'none');
-            jQuery(this).removeClass(itemOpenedClass);
-
-        }
-        else{
-
-            subnavCurrent.css('display', 'block');
-            jQuery(this).addClass(itemOpenedClass);
+            }
 
         }
 
     });
+
+    jQuery(window).resize(function(){
+
+        //  check the breakpoint for mobile menu
+        if(jQuery(this).innerWidth() > 900){
+
+            //  remove display: none hide animation
+            nav.removeAttr('style');
+
+            nav.removeClass(navOpenedClass);
+
+            // enable scroll for main area
+            jQuery('body').css('overflow', 'visible');
+
+            //  remove overlay
+            jQuery('.overlay-main').remove();
+
+        }
+
+    });
+
 
 }
