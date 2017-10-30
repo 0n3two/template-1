@@ -75,18 +75,19 @@
         position: relative; // for :before
         padding-left: 20px;
         margin-top: 0.75em;
+        &:first-child{
+            margin-top: 0;
+        }
         &:before{
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
             content: '\f00c';
             display: inline-block;
-            padding-right: 30px;
-            margin-top: -0.5em;
             font: normal normal normal 14px/1 FontAwesome;
             font-size: inherit;
             color: #01ddaf;
-            line-height: 1em;
+            line-height: inherit;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -229,6 +230,7 @@
     }
     &__col{
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
     }
 }
@@ -652,14 +654,13 @@
         padding: 1px 0;
         &:after{
             content: '';
+            display: block;
             position: absolute;
             bottom: 0;
             width: 50px;
             height: 2px;
             background-color: #01ddaf;
         }
-        // added styles for different text-align
-        // modified line under .section__header
         &_text-align_left{
             text-align: left;
             &:after{
@@ -680,6 +681,7 @@
         }
     }
     &__heading{
+        margin: 0;
         text-transform: uppercase;
         .fontSizeEm(18);
         font-weight: 400;
@@ -1057,9 +1059,9 @@
     }
     &__item{
         flex-grow: 1;
-        padding: 0 10px;
-        &:nth-child(2){
-            flex-grow: 2;
+        margin-left: 30px;
+        &:first-child{
+            margin-left: 0;
         }
     }
     &__img{
@@ -1203,7 +1205,9 @@
         .fontSizeEm(45);
     }
     &__features{
-        padding: 20px 80px;
+        width: 50%;
+        padding: 20px 0;
+        margin: auto;
     }
     &__feature{
         .fontSizeEm(13);
@@ -1518,6 +1522,27 @@
 
 //  900
 @media (max-width: 900px){
+
+    .content{
+        &__row{
+            &_columns_two{
+                flex-direction: column;
+            }
+        }
+        &__column-right{
+            &_img-placeholder{
+                padding: 75px 0 0;
+            }
+        }
+        &__rs-two{
+            padding: 110px 30px 0;
+        }
+    }
+
+    .parallax{
+        height: 300px;
+    }
+
     .nav-main{
         display: none;
         position: fixed;
@@ -1537,20 +1562,32 @@
         }
         &__nav{
             display: block;
+            border-top: 1px solid #3a3a3a;
         }
         & .nav{
             &__item{
+                border-bottom: 1px solid #3a3a3a;
                 &_level-2{
-                    padding-right: 20px;
-                    border-bottom: none;
+                    &:last-child{
+                        border-bottom: none;
+                    }
                 }
                 &_level-3{
-                    border-bottom: none;
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+                &_has-subnav{
+                    &_opened{
+                        background-color: #222222;
+                        & .nav__subnav{
+                            display: block;
+                        }
+                    }
                 }
             }
             &__link{
                 padding: 20px;
-                border-bottom: 1px solid #3a3a3a;
                 color: #8A8A8A;
                 line-height: 1.5;
                 &_active{
@@ -1562,6 +1599,7 @@
                 position: static;
                 visibility: visible;
                 opacity: 1;
+                border-top: 1px solid #3a3a3a;
                 background-color: #333333;
                 &_level-2{
                     padding-left: 40px;
@@ -1572,9 +1610,12 @@
             }
             &__col{
                 padding: 0;
+                margin-top: 30px;
+                &:first-child{
+                    margin-top: 0;
+                }
             }
             &__heading{
-                padding: 40px 20px 20px;
                 border-bottom: none;
             }
             &__icon{
@@ -1592,5 +1633,117 @@
             .fontSizeEm(20);
         }
     }
+    .slider{
+        &__heading{
+            .fontSizeEm(15);
+        }
+        &__text{
+            .fontSizeEm(12);
+        }
+    }
 
+    .rs-four{
+        & .section__header{
+            text-align: center;
+            &:after{
+                left: 50%;
+                margin-left: -25px;
+            }
+        }
+        &__content{
+            text-align: center;
+        }
+        & .section__text{
+            text-align: left;
+        }
+        &__list-u{
+            text-align: left;
+        }
+    }
+
+    .footer{
+        padding-top: 40px;
+        &__row{
+            &_flex{
+                flex-wrap: wrap;
+            }
+        }
+        &__col{
+            &_size_m{
+                flex-basis: 45%;
+                &:nth-child(n+3){
+                    margin-top: 45px;
+                }
+            }
+        }
+    }
+
+}
+
+//  768
+@media (max-width: 768px){
+
+    .parallax{
+        background-attachment: scroll;
+    }
+
+    .slider{
+        &__content{
+            display: none;
+        }
+        & .owl{
+            &-nav{
+                display: none;
+            }
+            &-dots{
+                display: none;
+            }
+        }
+    }
+
+    .rs-one{
+        &__content{
+            flex-direction: column;
+        }
+        &__item{
+            margin-top: 30px;
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+    }
+
+    .rs-three{
+        &__item{
+            width: 50%;
+            &:nth-child(3){
+                width: 100%;
+            }
+        }
+    }
+
+    .rs-six{
+        &__item{
+            padding: 20px;
+        }
+        &__content{
+            .fontSizeEm(13);
+        }
+    }
+
+    .footer{
+        &__row{
+            &_flex{
+                display: block;
+            }
+        }
+        &__col{
+            &_size_m{
+                margin-top: 45px;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
 }
