@@ -1353,7 +1353,7 @@
 
 
 // /* ----------------------------------------------
-//               TWEETS
+//               RECENT POSTS
 //    ---------------------------------------------- */
 .recent-posts{
     display: flex;
@@ -1764,6 +1764,48 @@
                 }
             }
         }
+        &__heading{
+            text-align: center;
+            &:after{
+                left: 50%;
+                margin-left: -20px;
+            }
+        }
+        &__about-us{
+            text-align: center;
+        }
+        &__contacts{
+            display: inline-block;
+            & .contacts__item{
+                text-align: left;
+            }
+        }
+        & .about-us{
+            & .footer__text{
+                text-align: left;
+            }
+        }
+        & .recent-posts{
+            width: 100%;
+            justify-content: center;
+            &__item{
+                margin: 5px;
+                &:nth-child(4n+1){
+                    margin-left: 5px;
+                }
+            }
+        }
+        & .socials{
+            flex-wrap: wrap;
+            justify-content: center;
+            &__item{
+                margin: 5px;
+                &:first-child{
+                    margin: 5px;
+                }
+            }
+        }
+
     }
 }
 

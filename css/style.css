@@ -1988,6 +1988,55 @@ template {
   .footer__col_size_m:first-child {
     margin-top: 0;
   }
+  .footer__heading {
+    text-align: center;
+  }
+  .footer__heading:after {
+    left: 50%;
+    margin-left: -20px;
+  }
+  .footer__about-us {
+    text-align: center;
+  }
+  .footer__contacts {
+    display: inline-block;
+  }
+  .footer__contacts .contacts__item {
+    text-align: left;
+  }
+  .footer .about-us .footer__text {
+    text-align: left;
+  }
+  .footer .recent-posts {
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer .recent-posts__item {
+    margin: 5px;
+  }
+  .footer .recent-posts__item:nth-child(4n+1) {
+    margin-left: 5px;
+  }
+  .footer .socials {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer .socials__item {
+    margin: 5px;
+  }
+  .footer .socials__item:first-child {
+    margin: 5px;
+  }
 }
 @media (max-width: 425px) {
   .section__header-wrapper {
