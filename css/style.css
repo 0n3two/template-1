@@ -1460,6 +1460,7 @@ template {
   width: 325px;
   padding-bottom: 20px;
   background: #2E0049 url('../img/rs-six__bg.jpg') no-repeat 0 0 / cover;
+  text-align: center;
 }
 .rs-ten__item-header {
   padding: 30px 20px;
@@ -1486,9 +1487,9 @@ template {
   font-size: 2.8125em;
 }
 .rs-ten__features {
-  width: 50%;
-  padding: 20px 0;
-  margin: auto;
+  display: inline-block;
+  padding: 20px 10px;
+  text-align: left;
 }
 .rs-ten__feature {
   font-size: 0.8125em;
@@ -1976,9 +1977,6 @@ template {
   .rs-ten__item:first-child {
     margin-top: 0;
   }
-  .rs-ten__features {
-    width: 40%;
-  }
   .footer__row_flex {
     display: block;
   }
@@ -2077,6 +2075,9 @@ template {
   }
   .rs-seven__btn {
     margin-top: 25px;
+  }
+  .rs-ten__item {
+    width: 100%;
   }
 }
 @media (max-width: 320px) {

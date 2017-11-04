@@ -1179,6 +1179,7 @@
         width: 325px;
         padding-bottom: 20px;
         background: #2E0049 url('@{src-img}/rs-six__bg.jpg') no-repeat 0 0/cover;
+        text-align: center;
     }
     &__item-header{
         padding: 30px 20px;
@@ -1205,9 +1206,9 @@
         .fontSizeEm(45);
     }
     &__features{
-        width: 50%;
-        padding: 20px 0;
-        margin: auto;
+        display: inline-block;
+        padding: 20px 10px;
+        text-align: left;
     }
     &__feature{
         .fontSizeEm(13);
@@ -1744,10 +1745,6 @@
                 margin-top: 0;
             }
         }
-        &__features{
-            width: 40%;
-        }
-
     }
 
     .footer{
@@ -1854,6 +1851,12 @@
         }
         &__btn{
             margin-top: 25px;
+        }
+    }
+
+    .rs-ten{
+        &__item{
+            width: 100%;
         }
     }
 }
