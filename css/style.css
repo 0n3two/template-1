@@ -1916,6 +1916,9 @@ template {
   }
 }
 @media (max-width: 768px) {
+  .nav-main {
+    width: 50%;
+  }
   .parallax {
     background-attachment: scroll;
   }
@@ -2040,6 +2043,9 @@ template {
   .section__header-wrapper {
     display: block;
   }
+  .nav-main {
+    width: 80%;
+  }
   .rs-six {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
@@ -2081,6 +2087,9 @@ template {
   }
 }
 @media (max-width: 320px) {
+  .nav-main {
+    width: 100%;
+  }
   .rs-three__menu {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
