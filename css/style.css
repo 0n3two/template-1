@@ -1949,10 +1949,10 @@ template {
     width: 100%;
   }
   .rs-six__item {
-    padding: 20px;
+    padding: 3%;
   }
   .rs-six__content {
-    font-size: 0.8125em;
+    font-size: 0.625em;
   }
   .rs-ten__content {
     -webkit-box-orient: vertical;
@@ -1987,5 +1987,18 @@ template {
   }
   .footer__col_size_m:first-child {
     margin-top: 0;
+  }
+}
+@media (max-width: 425px) {
+  .rs-six {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .rs-six__item {
+    width: 44%;
+  }
+  .rs-six__item:nth-child(2n):after {
+    content: normal;
   }
 }

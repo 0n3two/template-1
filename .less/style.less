@@ -1724,10 +1724,10 @@
 
     .rs-six{
         &__item{
-            padding: 20px;
+            padding: 3%;
         }
         &__content{
-            .fontSizeEm(13);
+            .fontSizeEm(10);
         }
     }
 
@@ -1769,7 +1769,17 @@
 
 // 425
 @media (max-width: 425px){
-
+    .rs-six{
+        flex-wrap: wrap;
+        &__item{
+            width: 44%;
+            &:nth-child(2n){
+                &:after{
+                    content: normal;
+                }
+            }
+        }
+    }
 }
 
 // 375
