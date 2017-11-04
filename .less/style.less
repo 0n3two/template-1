@@ -1832,6 +1832,39 @@
         }
     }
 
+    .rs-two{
+        &__item{
+            flex-basis: 50%;
+            &:nth-last-child(-n+3):before{
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background-image: linear-gradient(to left, rgba(0,0,0,0), #e8e8e8, rgba(0,0,0,0));
+            }
+            &:nth-child(3n+3):after{
+                content: '';
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background-image: linear-gradient(to top, rgba(0,0,0,0), #e8e8e8, rgba(0,0,0,0));
+            }
+            &:nth-last-child(-n+2):before{
+                content: '';
+                display: none;
+            }
+            &:nth-child(2n+2):after{
+                content: '';
+                display: none;
+            }
+        }
+    }
 
     .rs-six{
         flex-wrap: wrap;
