@@ -688,6 +688,9 @@ template {
 .search__input::placeholder {
   color: #eee;
 }
+.search__submit {
+  margin-left: 40px;
+}
 .slider {
   position: relative;
 }
@@ -2045,6 +2048,9 @@ template {
   }
   .nav-main {
     width: 80%;
+  }
+  .search__submit {
+    display: none;
   }
   .rs-six {
     -webkit-flex-wrap: wrap;
