@@ -272,9 +272,15 @@ function sliderClients(){
 
         responsive: {
             0: {
-                items: 3
+                items: 1
+            },
+            426:{
+                items: 2
             },
             769: {
+                items: 4
+            },
+            901:{
                 items: 5
             }
         },
