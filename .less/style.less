@@ -304,9 +304,6 @@
         margin: 0;
         list-style: none;
         &:nth-child(n+1){
-            ///*
-            // n+1 для того, чтоб полоса была только если списков >1
-            //*/
             position: relative; // for :before
             &:before{
                 content: '';
@@ -390,14 +387,11 @@
         }
     }
     &__icon{
-        ///*
-        // иконки с font-awesome лучше размещать внутри ссылки - при наведении применяется для нее такой же цвет, как и у ссылки
-        //*/
         &_to-level-3{
             position: absolute;
             top: 50%;
             right: 20px;
-            margin-top: -0.5em; // все время будет половина текущего размера шрифта т.е. нужной высоты т.к. line-height = 1
+            margin-top: -0.5em;
             .fontSizeEm(14, 12);
         }
     }
