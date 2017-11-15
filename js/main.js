@@ -134,14 +134,14 @@ function sliderMain(){
     *   Disable controls prev/next while sliding
     *
     * */
-    slider.on('translate.owl.carousel', function(e){
+    slider.on('translate.owl.carousel', function(){
 
         jQuery('.slider .owl-prev, .slider .owl-next').addClass('controls__btn-disabled');
 
     });
 
 
-    slider.on('translated.owl.carousel', function(e){
+    slider.on('translated.owl.carousel', function(){
 
         jQuery('.slider .owl-prev, .slider .owl-next').removeClass('controls__btn-disabled');
 
@@ -314,9 +314,6 @@ function navMobile(){
 
         // element with subnav
         itemToggle = jQuery('.nav-main__nav > .nav__item.nav__item_has-subnav'),
-
-        //  subnav selector
-        subnavItemSelector = '.nav__subnav',
 
         //  opened item css class
         itemOpenedClass = 'nav__item_has-subnav_opened',
