@@ -255,7 +255,7 @@ function sliderClientsAboutUs(){
         animateIn: 'fadeIn',
         animateOut: 'fadeOut'
 
-    })
+    });
 
 }
 
