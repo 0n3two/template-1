@@ -203,11 +203,16 @@ function sliderRsFive(){
         //  sets by from number up
         responsive: {
 
-            0: {
+            0:{
+                items: 1
+            },
+            426: {
+                items: 2
+            },
+            769:{
                 items: 3
             },
-
-            769: {
+            901: {
                 items: 4
             }
 
