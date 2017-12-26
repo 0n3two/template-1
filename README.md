@@ -1,2 +1,7 @@
-# README
-description
+# Кроссбраузерность
+-   Chrome 21+
+-   Firefox 28+
+-   Safari 7+
+-   Edge 12+
+
+Адаптирован под мобильные устройства.
